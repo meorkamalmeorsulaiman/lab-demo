@@ -20,12 +20,12 @@ All trees are listed in `show ip mroute` or `show pim topology`
 - RP is a meeting point for multicast traffic. It link between Source and Receiver
 - The link between Source to RP called **Source Tree**
 - The link between Receiver to RP called **Shared Tree**
-- Example - [Source and Share Tree](https://github.com/meorkamalmeorsulaiman/test/blob/main/lab-multicast/figures/01.png)
+- Example - [Source and Share Tree](https://github.com/meorkamalmeorsulaiman/lab-demo/blob/main/lab-multicast/figures/01.png)
 - Source tree use by **First Hop Router (FHR)** to forward multicast traffic from source to the RP
-  - A FHR is a gateway for source - [First Hop Router and Last Hop Router](https://github.com/meorkamalmeorsulaiman/test/blob/main/lab-multicast/figures/02.png)
+  - A FHR is a gateway for source - [First Hop Router and Last Hop Router](https://github.com/meorkamalmeorsulaiman/lab-demo/blob/main/lab-multicast/figures/02.png)
 - The RP use **Shared Tree** to forward down to the receiver
 - In general, the initial multicast traffic fowarded to the receiver as below
-- Example - [Multicast Forwarding](https://github.com/meorkamalmeorsulaiman/test/blob/main/lab-multicast/figures/03.png)
+- Example - [Multicast Forwarding](https://github.com/meorkamalmeorsulaiman/lab-demo/blob/main/lab-multicast/figures/03.png)
 
 ### Shared Tree
 
@@ -36,7 +36,7 @@ All trees are listed in `show ip mroute` or `show pim topology`
 - LHR knows the RP via PIM configuration
 - Shared Tree also known as (*,G) entry in `show ip mroute` or `show pim topology`
 - If the RP is not directly connected, the Join will travel hop by hop. This will create an entry on each hop along the way.
-- Example - [Shared Tree Creation](https://github.com/meorkamalmeorsulaiman/test/blob/main/lab-multicast/figures/04.png)
+- Example - [Shared Tree Creation](https://github.com/meorkamalmeorsulaiman/lab-demo/blob/main/lab-multicast/figures/04.png)
 
 ### Source Tree
 
@@ -48,14 +48,14 @@ All trees are listed in `show ip mroute` or `show pim topology`
 - The RP will also sends a PIM join back to the **FHR** to build the Source Tree
 - Source tree also known as (S,G) entry in `show ip mroute` or `show pim topology`
 - In general, the **FHR** will register the source with the RP and request the RP to built a Source Tree back to the **FHR**
-- Example - [Source Tree Creation](https://github.com/meorkamalmeorsulaiman/test/blob/main/lab-multicast/figures/05.png)
+- Example - [Source Tree Creation](https://github.com/meorkamalmeorsulaiman/lab-demo/blob/main/lab-multicast/figures/05.png)
 
 ### Source Tree Switchover
 
 - When LHR received first multicast packet, It aware of the source IP.
 - The LHR check the source IP in unicast table that the source IP could be reach using shorter path.
 - It sends (S,G) PIM join directly to the FHR hop by hop. This will also create an entry on each hop along the way.
-- Example - [Source Tree Switchover](https://github.com/meorkamalmeorsulaiman/test/blob/main/lab-multicast/figures/06.png)
+- Example - [Source Tree Switchover](https://github.com/meorkamalmeorsulaiman/lab-demo/blob/main/lab-multicast/figures/06.png)
 
 ## Inter Domain Multicast
 
